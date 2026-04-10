@@ -18,6 +18,7 @@
   "build": {
     "appId": "com.tradepilot.desktop",
     "productName": "TradePilot Desktop",
+    "publish": "never",
     "win": {
       "target": "nsis"
     },
