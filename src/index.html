@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>TradePilot Desktop</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0f172a; color: white; font-family: Arial, sans-serif; height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .logo { font-size: 32px; font-weight: bold; color: #38bdf8; margin-bottom: 8px; }
+  .sub { color: #94a3b8; margin-bottom: 32px; }
+  .card { background: #1e293b; border-radius: 16px; padding: 24px; width: 380px; }
+  label { color: #94a3b8; font-size: 13px; display: block; margin-bottom: 6px; }
+  input { width: 100%; background: #0f172a; border: 1px solid #334155; color: white; padding: 10px; border-radius: 8px; font-size: 15px; margin-bottom: 16px; }
+  .btn { width: 100%; padding: 12px; border: none; border-radius: 10px; font-size: 15px; font-weight: bold; cursor: pointer; transition: 0.2s; }
+  .btn-start { background: #22c55e; color: white; }
+  .btn-start:hover { background: #16a34a; }
+  .btn-stop { background: #ef4444; color: white; }
+  .btn-send { background: #38bdf8; color: #0f172a; margin-top: 10px; }
+  .btn-send:disabled { opacity: 0.4; cursor: not-allowed; }
+  .status { text-align: center; margin: 12px 0; color: #f59e0b; font-size: 14px; }
+  .count { text-align: center; font-size: 28px; font-weight: bold; color: #38bdf8; margin: 8px 0; }
+  .log { background: #0f172a; border-radius: 8px; padding: 10px; height: 100px; overflow-y: auto; font-size: 12px; color: #64748b; font-family: monospace; margin-top: 12px; }
+  .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #22c55e; margin-left: 6px; animation: pulse 1s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+</style>
+</head>
+<body>
+<div class="logo">🎯 TradePilot</div>
+<div class="sub">איסוף נרות אוטומטי</div>
+<div class="card">
+  <label>סימבול (למשל NQ1!, BTCUSDT)</label>
+  <input id="symbol" value="NQ1!" placeholder="NQ1!">
+  <label>טייםפריים (1, 5, 15, 60, D)</label>
+  <input id="interval" value="1" placeholder="1">
+  <button class="btn btn-start" id="mainBtn" onclick="toggle()">▶ התחל איסוף</button>
+  <button class="btn btn-send" id="sendBtn" disabled onclick="sendData()">📤 שלח לניתוח</button>
+  <div class="status" id="status">מוכן</div>
+  <div class="count" id="count">0 נרות</div>
+  <div class="log" id="log"></div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

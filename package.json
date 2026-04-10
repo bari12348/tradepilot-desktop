@@ -1,1 +1,29 @@
-
+{
+  "name": "tradepilot-desktop",
+  "version": "1.0.0",
+  "description": "TradePilot Desktop - Candle Collector",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win --x64"
+  },
+  "dependencies": {
+    "ws": "^8.14.2"
+  },
+  "devDependencies": {
+    "electron": "^27.0.0",
+    "electron-builder": "^24.6.4"
+  },
+  "build": {
+    "appId": "com.tradepilot.desktop",
+    "productName": "TradePilot Desktop",
+    "win": {
+      "target": "nsis",
+      "icon": "icon.png"
+    },
+    "nsis": {
+      "oneClick": true,
+      "silentInstall": false
+    }
+  }
+}
